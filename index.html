@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daedalus Solutions</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            background: #000000;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 0 20px;
+        }
+        header img {
+            width: 150px; /* Increased size */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 3.5em; /* Increased font size */
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        header a {
+            margin-top: 20px;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background: #ffffff;
+            color: #000000;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        header a:hover {
+            background: #cccccc;
+            transform: scale(1.05);
+        }
+        section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 1.1em;
+            color: #bbbbbb;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .story-container {
+            max-width: 1200px; /* Increased width */
+            margin: 0 auto;
+        }
+        .story {
+            font-size: 1.2em;
+            color: #ffffff;
+            line-height: 1.8;
+            margin: 20px auto;
+            padding: 10px 20px; /* Reduced padding */
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .story span {
+            display: inline-block;
+            opacity: 0;
+            white-space: nowrap;
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card {
+            background: #121212;
+            border: 2px solid #444;
+            border-radius: 10px;
+            width: 350px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+        .service-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            font-size: 1em;
+            color: #cccccc;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background: #990000;
+        }
+        footer p {
+            flex: 1 1 100%;
+            text-align: center;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Keyframes for fadeIn effect */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            .service-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="brain-logo-edit-bk.jpg" alt="Daedalus Solutions Logo">
+        <h1>Daedalus Solutions</h1>
+        <a href="#services">Explore Our Services</a>
+    </header>
+
+    <section id="about">
+        <h2>Our Story</h2>
+        <div class="story-container">
+            <p class="story">
+                <span>In</span> <span>a</span> <span>summer</span> <span>of</span> <span>inspiration,</span> <span>Josh</span> <span>Johnson</span> <span>and</span> <span>Sierhah</span> <span>Price</span> <span>envisioned</span> <span>a</span> <span>company</span> <span>to</span> <span>revolutionize</span> <span>education.</span> <span>Ten</span> <span>days</span> <span>later,</span> <span><strong>Daedalus Solutions</strong></span> <span>was</span> <span>born.</span> <span>Named</span> <span>after</span> <span>the</span> <span>ingenious</span> <span>creator</span> <span>of</span> <span>Greek</span> <span>mythology,</span> <span>Daedalus</span> <span>symbolizes</span> <span>innovation,</span> <span>adaptability,</span> <span>and</span> <span>bold</span> <span>problem-solving.</span> <span>Starting</span> <span>as</span> <span>an</span> <span>ed-tech</span> <span>firm,</span> <span>our</span> <span>mission</span> <span>was</span> <span>clear:</span> <span>empower</span> <span>schools</span> <span>and</span> <span>teachers</span> <span>to</span> <span>transform</span> <span>education</span> <span>through</span> <span>cutting-edge</span> <span>technology</span> <span>and</span> <span>visionary</span> <span>solutions.</span> <span>Today,</span> <span>we</span> <span>bring</span> <span>that</span> <span>same</span> <span>passion</span> <span>to</span> <span>data</span> <span>analytics,</span> <span>reporting,</span> <span>applications,</span> <span>and</span> <span>beyond,</span> <span>striving</span> <span>to</span> <span>change</span> <span>the</span> <span>world</span> <span>one</span> <span>solution</span> <span>at</span> <span>a</span> <span>time.</span>
+            </p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Data Warehouses</h3>
+                <p>Custom data warehouses tailored for robust analytics and reporting solutions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Predictive Analytics</h3>
+                <p>Advanced predictive models to uncover insights and drive data-driven decisions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Natural Language Processing</h3>
+                <p>AI solutions for text analysis, chatbot development, and document intelligence.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Design & Applications</h3>
+                <p>Interactive and responsive web solutions tailored to business needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Daedalus Solutions | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const words = document.querySelectorAll('.story span');
+            words.forEach((word, index) => {
+                setTimeout(() => {
+                    word.style.animationDelay = `${index * 150}ms`;
+                }, 0);
+            });
+        });
+    </script>
+</body>
+</html>
