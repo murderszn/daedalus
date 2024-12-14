@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Daedalus Solutions</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            background: #000000;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 20px;
+        }
+        .logo-container {
+            display: grid;
+            grid-template-columns: repeat(2, 75px);
+            grid-gap: 10px;
+            margin-bottom: 20px;
+        }
+        .logo-box {
+            width: 75px;
+            height: 75px;
+            border-radius: 10px;
+        }
+        .logo-box.red {
+            background-color: #990000;
+        }
+        .logo-box.white {
+            background-color: #ffffff;
+        }
+        header h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #bbbbbb;
+            margin-top: 20px;
+            max-width: 800px;
+            text-align: center;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .contact-details h2 {
+            font-size: 2em;
+            color: #ffffff;
+        }
+        .contact-details p, .social-media a {
+            font-size: 1.1em;
+            color: #bbbbbb;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        .contact-details a {
+            color: #990000;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        .contact-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .contact-form {
+            background: #121212;
+            border: 2px solid #444;
+            border-radius: 10px;
+            width: 400px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        .contact-form label {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            background: #222222;
+            border: 1px solid #555;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #ffffff;
+        }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border-color: #990000;
+            background-color: #333333;
+            outline: none;
+        }
+        .contact-form button {
+            display: inline-block;
+            font-size: 1em;
+            text-align: center;
+            width: 100%;
+            padding: 15px;
+            background: #121212;
+            color: #ffffff;
+            border: 2px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background: #990000;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #990000;
+            color: #ffffff;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            .logo-container {
+                grid-template-columns: repeat(2, 50px);
+                grid-gap: 5px;
+            }
+            .logo-box {
+                width: 50px;
+                height: 50px;
+            }
+            .contact-form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-box white"></div>
+            <div class="logo-box red"></div>
+            <div class="logo-box white"></div>
+            <div class="logo-box white"></div>
+        </div>
+        <h1>Contact Us</h1>
+        <p>Have a question or want to get in touch? Fill out the form below or reach us through the provided contact details.</p>
+    </header>
+
+    <section id="contact">
+        <div class="contact-details">
+            <h2>Our Contact Information</h2>
+            <p>Email: <a href="mailto:info@daedalus.com">info@daedalus.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p>Address: 123 Innovation Lane, Tech City, 56789</p>
+            <div class="social-media">
+                <a href="#" aria-label="LinkedIn">LinkedIn</a> |
+                <a href="#" aria-label="Twitter">Twitter</a> |
+                <a href="#" aria-label="Instagram">Instagram</a>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <form action="submit_form.php" method="post" class="contact-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="reason">Reason for Contact</label>
+                <select id="reason" name="reason" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="support">Support</option>
+                    <option value="sales">Sales Inquiry</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here" rows="6" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Daedalus Solutions | <a href="privacy.html">Privacy Policy</a> | <a href="index.html">Back to Home</a></p>
+    </footer>
+</body>
+</html>

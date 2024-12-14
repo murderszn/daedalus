@@ -16,35 +16,56 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 50vh;
+            height: 40vh;
             background: #000000;
             color: #ffffff;
             text-align: center;
-            padding: 0 20px;
+            padding: 10px 20px;
         }
-        header img {
-            width: 150px; /* Increased size */
-            height: auto;
+        .logo-container {
+            display: grid;
+            grid-template-columns: repeat(2, 75px); /* 2 columns of 75px */
+            grid-gap: 10px;
             margin-bottom: 20px;
         }
+        .logo-box {
+            width: 75px;
+            height: 75px;
+            border-radius: 10px;
+        }
+        .logo-box.red {
+            background-color: #990000; /* Red */
+        }
+        .logo-box.white {
+            background-color: #ffffff; /* White */
+        }
         header h1 {
-            font-size: 3.5em; /* Increased font size */
+            font-size: 3.5em;
             font-weight: 900;
             letter-spacing: 2px;
             margin: 0;
         }
-        header a {
+        header .buttons {
             margin-top: 20px;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            background: #ffffff;
-            color: #000000;
-            border-radius: 50px;
-            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        header a {
+            display: inline-block;
+            font-size: 1em;
+            text-align: center;
+            width: 250px;
+            padding: 15px;
+            background: #121212;
+            color: #ffffff;
+            border: 2px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            margin: 5px;
         }
         header a:hover {
-            background: #cccccc;
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
         }
         section {
             padding: 100px 20px;
@@ -63,7 +84,7 @@
             margin-right: auto;
         }
         .story-container {
-            max-width: 1200px; /* Increased width */
+            max-width: 1200px;
             margin: 0 auto;
         }
         .story {
@@ -71,7 +92,7 @@
             color: #ffffff;
             line-height: 1.8;
             margin: 20px auto;
-            padding: 10px 20px; /* Reduced padding */
+            padding: 10px 20px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
         }
@@ -141,21 +162,37 @@
             .service-card {
                 width: 100%;
             }
+            .logo-container {
+                grid-template-columns: repeat(2, 50px); /* Adjust grid size for smaller screens */
+                grid-gap: 5px;
+            }
+            .logo-box {
+                width: 50px;
+                height: 50px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="brain-logo-edit-bk.jpg" alt="Daedalus Solutions Logo">
+        <div class="logo-container">
+            <div class="logo-box white"></div> <!-- Top left: White -->
+            <div class="logo-box red"></div>   <!-- Top right: Red -->
+            <div class="logo-box white"></div> <!-- Bottom left: White -->
+            <div class="logo-box white"></div> <!-- Bottom right: White -->
+        </div>
         <h1>Daedalus Solutions</h1>
-        <a href="#services">Explore Our Services</a>
+        <div class="buttons">
+            <a href="#services">Explore Our Services</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
     </header>
 
     <section id="about">
         <h2>Our Story</h2>
         <div class="story-container">
             <p class="story">
-                <span>In</span> <span>a</span> <span>summer</span> <span>of</span> <span>inspiration,</span> <span>Josh</span> <span>Johnson</span> <span>and</span> <span>Sierhah</span> <span>Price</span> <span>envisioned</span> <span>a</span> <span>company</span> <span>to</span> <span>revolutionize</span> <span>education.</span> <span>Ten</span> <span>days</span> <span>later,</span> <span><strong>Daedalus Solutions</strong></span> <span>was</span> <span>born.</span> <span>Named</span> <span>after</span> <span>the</span> <span>ingenious</span> <span>creator</span> <span>of</span> <span>Greek</span> <span>mythology,</span> <span>Daedalus</span> <span>symbolizes</span> <span>innovation,</span> <span>adaptability,</span> <span>and</span> <span>bold</span> <span>problem-solving.</span> <span>Starting</span> <span>as</span> <span>an</span> <span>ed-tech</span> <span>firm,</span> <span>our</span> <span>mission</span> <span>was</span> <span>clear:</span> <span>empower</span> <span>schools</span> <span>and</span> <span>teachers</span> <span>to</span> <span>transform</span> <span>education</span> <span>through</span> <span>cutting-edge</span> <span>technology</span> <span>and</span> <span>visionary</span> <span>solutions.</span> <span>Today,</span> <span>we</span> <span>bring</span> <span>that</span> <span>same</span> <span>passion</span> <span>to</span> <span>data</span> <span>analytics,</span> <span>reporting,</span> <span>applications,</span> <span>and</span> <span>beyond,</span> <span>striving</span> <span>to</span> <span>change</span> <span>the</span> <span>world</span> <span>one</span> <span>solution</span> <span>at</span> <span>a</span> <span>time.</span>
+                <span>In</span> <span>a</span> <span>summer</span> <span>of</span> <span>inspiration,</span> <span>Josh</span> <span>Johnson</span> <span>and</span> <span>Sierhah</span> <span>Price</span> <span>envisioned</span> <span>a</span> <span>company</span> <span>to</span> <span>revolutionize</span> <span>education.</span> <span>Ten</span> <span>days</span> <span>later,</span> <span><strong>Daedalus Solutions</strong></span> <span>was</span> <span>born.</span>
             </p>
         </div>
     </section>
@@ -183,7 +220,7 @@
     </section>
 
     <footer>
-        <p>© 2024 Daedalus Solutions | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+        <p>© 2024 Daedalus Solutions | <a href="#">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
     </footer>
 
     <script>
