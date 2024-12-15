@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .cookie {
+            width: 150px;
+            height: 150px;
+            background-image: url('cookie.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            position: relative;
+            animation: bounce 1.5s infinite;
+        }
+        .crumb {
+            width: 10px;
+            height: 10px;
+            background-color: #d2691e;
+            clip-path: polygon(50% 0%, 85% 20%, 100% 60%, 70% 100%, 30% 100%, 0% 60%, 15% 20%);
+            position: absolute;
+            animation: fall 2.5s infinite;
+        }
+        .crumb:nth-child(1) {
+            top: 40px;
+            left: 30px;
+            transform: rotate(15deg);
+            animation-delay: 0s;
+        }
+        .crumb:nth-child(2) {
+            top: 60px;
+            left: 80px;
+            transform: rotate(-10deg);
+            animation-delay: 0.3s;
+        }
+        .crumb:nth-child(3) {
+            top: 90px;
+            left: 50px;
+            transform: rotate(20deg);
+            animation-delay: 0.6s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>We like a busy cookie.</h1>
+    <div class="cookie">
+        <div class="crumb"></div>
+        <div class="crumb"></div>
+        <div class="crumb"></div>
+    </div>
+</body>
+</html>
