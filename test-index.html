@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daedalus Solutions</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: space-between; /* Spread content evenly */
+            margin: 0;
+            position: relative;
+            font-family: 'BebasNeue', Arial, Helvetica, sans-serif, monospace;
+            color: #23037a;
+            background: #ffffff;
+            justify-content: space-between;
+            }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Default padding for smaller screens */
+            height: 100px; /* Adjust as needed */
+            background-color: #23037a; /* Example background color */
+        }
+
+        /* Media query for wider screens */
+        @media (min-width: 1200px) {
+            header {Padding-left: 400px}
+            nav {padding-right: 400px}
+            .color-block.block-red{padding-left: 400px}
+            .color-block.block-light-blue{padding-left: 400px}
+            .banner-image{padding-left: 400px}
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Add space between the logo grid and text */
+
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 30px);
+            grid-template-rows: repeat(2, 30px);
+            gap: 5px; /* Adjust spacing between individual squares */
+            margin-right: 15px; /* Add some space between the logo grid and the text */
+        }
+
+        .logo-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .logo-box.white {
+            background-color: #ffffff;
+        }
+
+        .logo-box.red {
+            background-color: #b5bfc4e0;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            color: #ffffff;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: absolute; /* Positions the nav relative to its closest positioned ancestor */
+            right: 15px; /* Aligns the nav to the right margin */
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #23037a;
+        }
+
+        .cta-button {
+            padding: 8px 16px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ffffff;
+            color: #23037a;
+        }
+
+        .color-blocks {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-block {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 50px 60px;
+            box-sizing: border-box;
+        }
+
+        .block-light-blue {
+            background-color: #ffffff;
+            width: 100%; /* Full width of the screen */
+            height: 700px; /* Fixed height */
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif, monospace;
+            font-weight: Bold;
+            font-size: 5.1em; /* Fixed font size */
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .subtitle {
+            color: #23037a; /* Red color for the subtitle */
+            font-family: Arial, Helvetica, sans-serif; /* You can change this to match your design */
+            font-size: .314em; /* Adjust subtitle font size */
+            margin-top: 10px; /* Space between the subtitle and the main text */
+        }
+
+        .block-red {
+            background-color: #23037a;
+            width: 100%; /* Full width of the screen */
+            height: 350px; /* Fixed height */
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif, monospace;
+            font-weight: Medium;
+            font-size: 1.5em; /* Fixed font size */
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .block-red h2 {
+            font-size: 2.5em;
+            margin: 0 0 20px 0;
+        }
+
+        .block-red a.cta-button {
+            display: inline-block;
+            width: 180px;
+            text-align: center;
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            margin-top: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .block-red a.cta-button:hover {
+            background-color: #ffffff;
+            color: #23037a;
+        }
+
+        .text-wrapper {
+            display: flex;
+            flex-direction: column; /* Stack spans vertically */
+            gap: 10px; /* Optional: Add space between the lines */
+            text-align: left; /* Center align text */
+        }
+
+        section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 1.2em;
+            color: #bbbbbb;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .story-container {
+            display: block; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .story {
+            font-size: 1.3em;
+            color: #000000;
+            line-height: 1.8;
+            margin: 20px auto;
+            padding: 10px 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+        .story span {
+            display: inline-block;
+            opacity: 0;
+            white-space: nowrap;
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card {
+            background: #ffffff;
+            border: 2.86px solid #ffffff;
+            border-radius: 10px;
+            width: 350px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+        .service-card h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            font-size: 1em;
+            color: #000000;
+        }
+        footer {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            position: relative; /* Ensure it stays within the layout */
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background: #2c00a7;
+            bottom: 0; /* Keep the footer at the bottom */
+            width: 100%; /* Full width of the page */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow for emphasis */
+            font-size: 1em;
+            color: #ffffff;
+        }
+        footer p {
+            flex: 1 1 100%;
+            text-align: center;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .color-block.block-red {
+            position: relative; /* Make the red block a positioning context */
+        }
+
+        .banner-image {
+            position: absolute;
+            top: -500px; /* Adjusted for desktop */
+            left: 650px; /* Adjusted for desktop */
+            width: auto; /* Maintain aspect ratio */
+            height: 850px;
+            z-index: 1; 
+            opacity: 1.0;
+            overflow: hidden;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .banner-image {
+                top: -200px; /* Adjusted for mobile */
+                left: 50%; /* Center horizontally */
+                transform: translateX(-50%); /* Ensure it's centered */
+                height: 300px; /* Reduce height for smaller screens */
+                width: auto; /* Maintain aspect ratio */
+            }
+        }
+
+        /* Keyframes for fadeIn effect */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Our Team Cards */
+        #our-team {
+            text-align: center;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service-card img {
+            height: auto;
+            max-width: 100%;
+            max-height: 200px;
+            display: block; /* This ensures the image behaves like a block element */
+            margin: 0 auto; /* This centers the image horizontally within its container */
+        }
+
+
+        /* Toolkit logo grid */
+            .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+            }
+
+            .tool-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            }
+
+            .tool-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            }
+
+            .tool-item img {
+            max-height: 50px;
+            max-width: 100px;
+            margin-bottom: 15px;
+            }
+
+            .tool-item h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #444;
+            }
+
+            .tool-item p {
+            font-size: 0.9rem;
+            color: #666;
+            }
+
+    </style>
+        <header>
+            <div class="logo-container">
+                <div class="logo-grid">
+                    <div class="logo-box white"></div>
+                    <div class="logo-box red"></div>
+                    <div class="logo-box white"></div>
+                    <div class="logo-box white"></div>
+                </div>
+                <h1>Daedalus Solutions</h1>
+            </div>
+            <nav>
+                <a href="#">Solutions</a>
+                <a href="#">About Us</a>
+                <a href="#" class="cta-button">Try Daedalus</a>
+            </nav>
+        </header>
+    
+        <div class="color-blocks">
+            <div class="color-block block-light-blue">
+                <div class="text-wrapper">
+                    <span>Hire a team</span>
+                    <span>thats trained to</span> 
+                    <span>do the job.</span>
+                    <div class="subtitle">
+                        Powered By Multi-Agent AI Workflows
+                    </div>
+                </div>
+            </div>
+            <div class="color-block block-red">
+                <div class="text-wrapper">
+                    <span>Learn how we can help your organization.</span> 
+                    <span>Take our capabilities questionaire today.</span>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+                <img src="Dashboard-Phone-Left-5-1-e1723221960594.webp" alt="Descriptive Image Alt Text" class="banner-image"> 
+            </div>
+        </div>
+</head>
+<body>
+    <section id="about">
+        <h2>Our Story</h2>
+        <div class="story-container">
+          <div class="column">
+            <p class="story">
+              <span>In a summer of inspiration,</span> <span>Joshua Johnson</span> <span>and</span> <span>Sierhah Price</span> <span>envisioned a bold idea:</span> <span>to harness the power of multi-agent AI</span> <span>and</span> <span>revolutionize workflows across industries.</span> <span>Driven by a shared passion</span> <span>for innovation</span> <span>and a desire to reduce operational inefficiencies,</span> <span>they set out to create a company that would empower organizations</span> <span>to focus on their core missions.</span> <span>Just ten days later,</span> <span><strong>Daedalus Solutions</strong></span> <span>was born.</span>
+            </p>
+          </div>
+          <div class="column">
+            <p class="story">
+              <span>Inspired by Daedalus, the legendary innovator of Greek mythology,</span> <span>our name embodies ingenuity,</span> <span>adaptability,</span> <span>and the courage to tackle complex challenges.</span> <span>Our mission is clear:</span> <span>to combine human expertise with the power of artificial intelligence,</span> <span>building solutions that reduce costs,</span> <span>streamline processes,</span> <span>and unlock new opportunities for growth.</span> <span>From automating repetitive tasks</span> <span>to pioneering AI-driven strategies,</span> <span>Daedalus Solutions is here to help organizations thrive.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      
+    <section id="services">
+        <h2>Our Services</h2>
+    <section class="service-category">
+        <div class="services">
+        <div class="service-card">
+            <h3>Data Warehouse</h3>
+            <p>
+            Design and implementation of scalable, custom-built data warehouses 
+            to support robust analytics, seamless data integration, and reporting needs, 
+            ensuring your organization can make data-driven decisions with ease.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Predictive Analytics</h3>
+            <p>
+            Leverage cutting-edge predictive modeling techniques to uncover patterns, forecast trends, 
+            and provide actionable insights, enabling organizations to stay ahead of the curve.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Natural Language Processing</h3>
+            <p>
+            Empower your business with AI-driven solutions for processing and analyzing text data, 
+            developing intelligent chatbots, and automating document workflows 
+            to save time and improve outcomes.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Web Design & Applications</h3>
+            <p>
+            Create interactive, responsive, and user-friendly web solutions 
+            that align with your organization's needs, offering seamless functionality and superior user experiences.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Finance & Accounting Solutions</h3>
+            <p>
+            Optimize financial operations with tailored solutions for budgeting, 
+            accounting processes, and financial reporting. From automation to insights, 
+            we help ensure your organization's financial health.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Analytics, Insights, & Reporting</h3>
+            <p>
+            Implement advanced reporting and analytics frameworks to provide clear, actionable insights, 
+            driving organizational efficiency and supporting key decision-making processes.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Strategic Consulting & Special Projects</h3>
+            <p>
+            Address unique challenges with tailored consulting solutions and innovative project support, 
+            helping your organization achieve its long-term goals with expert guidance.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3>Process & Workflow Support</h3>
+            <p>
+            Streamline complex processes with comprehensive workflow optimization and support, 
+            ensuring efficiency and scalability while reducing operational bottlenecks.
+            </p>
+        </div>
+        </div>
+    </section>
+  
+    <!-- Team -->
+    <section id="our-team">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="service-card">
+                <h3>Joshua</h3>
+                <p>Co-Founder, CEO</p>
+                <img src="headshot-bw.jpg" alt="Joshua's Photo" height="50">
+            </div>
+            <div class="service-card">
+                <h3>Sierhah</h3>
+                <p>Co-Founder, COO</p>
+                <img src="sierhah hs.JPG" alt="Sierhah's Photo" height="50">
+            </div>
+            <div class="service-card">
+                <h3>Brock</h3>
+                <p>CFO</p>
+                <img src="sierhah hs.JPG" alt="Sierhah's Photo" height="50">    
+        </div>
+    </section>
+
+    <!-- Toolkit -->
+    <section id="our-toolkit">
+        <h2>Our Technology</h2>
+        <div class="tool-grid">
+        <div class="tool-item">
+            <img src="openai.png" alt="OpenAI Logo">
+            <h3>OpenAI</h3>
+            <p>Cutting-edge AI solutions for natural language understanding and generation.</p>
+        </div>
+        <div class="tool-item">
+            <img src="databricks_BIG.png" alt="Databricks Logo">
+            <h3>Databricks</h3>
+            <p>Unified platform for data engineering, machine learning, and analytics.</p>
+        </div>
+        <div class="tool-item">
+            <img src="python.png" alt="Python Logo">
+            <h3>Python</h3>
+            <p>A versatile programming language for data analysis, AI, and application development.</p>
+        </div>
+        <div class="tool-item">
+            <img src="google.png" alt="Google Logo">
+            <h3>Google Cloud</h3>
+            <p>Robust cloud computing and storage solutions for enterprise needs.</p>
+        </div>
+        <div class="tool-item">
+            <img src="grok.png" alt="Grok Logo">
+            <h3>Grok</h3>
+            <p>AI-driven insights for learning and organizational intelligence.</p>
+        </div>
+        <div class="tool-item">
+            <img src="colab.png" alt="Colab Logo">
+            <h3>Google Colab</h3>
+            <p>Collaborative environment for Python-based machine learning projects.</p>
+        </div>
+        <div class="tool-item">
+            <img src="crewai-logo.png" alt="CrewAI Logo">
+            <h3>CrewAI</h3>
+            <p>Multi-agent systems for automation and efficient task management.</p>
+        </div>
+        <div class="tool-item">
+            <img src="tableau.png" alt="Tableau Logo">
+            <h3>Tableau</h3>
+            <p>Advanced visualization tools for actionable data insights.</p>
+        </div>
+        </div>
+    </section>
+        
+    <footer>
+        <p>© 2024 Daedalus Solutions | <a href="#">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const words = document.querySelectorAll('.story span');
+            words.forEach((word, index) => {
+                setTimeout(() => {
+                    word.style.animationDelay = `${index * 200}ms`;
+                }, 0);
+            });
+        });
+    </script>
+</body>
+</html>
