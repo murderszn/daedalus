@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Daedalus Solutions - Capabilities Survey</title>
+    <style>
+        body {
+            font-family: 'BebasNeue', Arial, Helvetica, sans-serif, monospace;
+            color: #23037a;
+            background: #23037a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 30px);
+            grid-template-rows: repeat(2, 30px);
+            gap: 5px;
+            margin-right: 15px;
+        }
+
+        .logo-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .logo-box.white {
+            background-color: #ffffff;
+        }
+
+        .logo-box.red {
+            background-color: #b5bfc4e0;
+        }
+
+        .intro-container {
+            background: #ffffff;
+            border: 2.86px solid #23037a;
+            border-radius: 10px;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #23037a;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #23037a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #4400ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo-grid">
+            <div class="logo-box white"></div>
+            <div class="logo-box red"></div>
+            <div class="logo-box red"></div>
+            <div class="logo-box white"></div>
+        </div>
+    </div>
+    <div class="intro-container">
+        <h1>Welcome to Our Capabilities Survey</h1>
+        <p>Thank you for considering Daedalus Solutions for your project needs. This survey is designed to help us understand your capabilities, requirements, and project scope so we can tailor solutions specifically for you. It should take approximately <strong>5-7 minutes</strong> to complete.</p>
+        <p>By participating in this survey, we'll build a detailed profile of your needs, which will be processed by our proprietary <strong>agent teams</strong>. These agents are specialized in gathering and analyzing data to ensure that the solutions we propose are perfectly aligned with your business objectives, whether that involves strategy development, technology implementation, or team management.</p>
+        <a href="question1.html" class="cta-button">Start the Survey</a>
+    </div>
+</body>
+</html>

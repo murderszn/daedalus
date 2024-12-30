@@ -5,45 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Daedalus Solutions</title>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-            color: #ffffff;
-            background: #000000;
-        }
-        header {
+body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif, monospace;
+            color: #23037a;
+            background: linear-gradient(135deg, #23037a, #23037a);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            height: 40vh;
-            background: #000000;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 20px;
+            padding: 0 20px;
+            height: 110px;
+            background-color: #23037a;
         }
+
+        /* Logo Design */
         .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Add space between the logo grid and text */
+
+        }
+
+        .logo-grid {
             display: grid;
-            grid-template-columns: repeat(2, 75px);
-            grid-gap: 10px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(2, 30px);
+            grid-template-rows: repeat(2, 30px);
+            gap: 5px; /* Adjust spacing between individual squares */
+            margin-right: 15px; /* Add some space between the logo grid and the text */
         }
+
         .logo-box {
-            width: 75px;
-            height: 75px;
-            border-radius: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
         }
-        .logo-box.red {
-            background-color: #990000;
-        }
+
         .logo-box.white {
             background-color: #ffffff;
         }
-        header h1 {
-            font-size: 3.5em;
-            font-weight: 900;
-            letter-spacing: 2px;
+
+        .logo-box.red {
+            background-color: #b5bfc4e0;
+        }
+        
+        h1 {
+            font-size: 1.9em;
+            color: #ffffff;
             margin: 0;
+            font-weight: bold;
+        }
+
+        /* Nav Bar */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: absolute; /* Positions the nav relative to its closest positioned ancestor */
+            right: 15px; /* Aligns the nav to the right margin */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #23037a;
+        }
+
+        .cta-button:hover {
+            background-color: #ffffff;
+            color: #23037a;
+        }
+
+        .cta-button {
+            padding: 8px 16px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         section {
             padding: 50px 20px;
@@ -52,13 +103,13 @@
             margin: 0 auto;
         }
         section h2 {
-            font-size: 2em;
+            font-size: 1.5em;
+            margin-bottom: 10px;
             color: #ffffff;
-            margin-bottom: 20px;
         }
         section p, section ul {
             font-size: 1.1em;
-            color: #bbbbbb;
+            color: #ffffff;
             margin-bottom: 20px;
             line-height: 1.8;
         }
@@ -66,49 +117,59 @@
             list-style-type: square;
             padding-left: 20px;
         }
+        /* Footer */
         footer {
+            margin: 0;
+            display: flex;
             text-align: center;
-            padding: 40px 20px;
-            background: #990000;
+            position: relative; /* Ensure it stays within the layout */
+            flex-wrap: wrap;
+            padding: 20px 20px;
+            background: #23037a;
+            bottom: 0; /* Keep the footer at the bottom */
+            width: 100%; /* Full width of the page */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow for emphasis */
+            font-size: 1em;
+            color: #ffffff;
+        }
+        footer p {
+            flex: 1 1 100%;
+            text-align: center;
+            margin-top: 20px;
             color: #ffffff;
         }
         footer a {
             color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
         }
         footer a:hover {
             text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-            .logo-container {
-                grid-template-columns: repeat(2, 50px);
-                grid-gap: 5px;
-            }
-            .logo-box {
-                width: 50px;
-                height: 50px;
-            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <div class="logo-box white"></div> <!-- Top left: White -->
-            <div class="logo-box red"></div>   <!-- Top right: Red -->
-            <div class="logo-box white"></div> <!-- Bottom left: White -->
-            <div class="logo-box white"></div> <!-- Bottom right: White -->
-        </div>
-        <h1>Privacy Policy</h1>
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo-container">
+                <div class="logo-grid">
+                    <div class="logo-box white"></div>
+                    <div class="logo-box red"></div>
+                    <div class="logo-box white"></div>
+                    <div class="logo-box white"></div>
+                </div>
+                <h1>Daedalus Solutions</h1>
+            </div>
+        </a>   
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">About Us</a>
+            <a href="#" class="cta-button">Try Daedalus</a>
+        </nav>
     </header>
 
     <section>
-        <h2>Effective Date: [Insert Date]</h2>
-        <p>Welcome to Daedalus Solutions! Your privacy is important to us, and we are committed to protecting it. This Privacy Policy explains how we collect, use, and safeguard your information when you interact with our website or services.</p>
+        <h2>Effective Date: 12/29/2024</h2>
+        <p>Your privacy is important to us, and we are committed to protecting it. This Privacy Policy explains how we collect, use, and safeguard your information when you interact with our website or services.</p>
 
         <h2>1. Information We Collect</h2>
         <p>We may collect the following types of information:</p>
@@ -163,14 +224,9 @@
 
         <h2>10. Contact Us</h2>
         <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
-        <p><strong>Daedalus Solutions</strong></p>
-        <p>Email: [Insert Email Address]</p>
-        <p>Phone: [Insert Phone Number]</p>
-        <p>Address: [Insert Physical Address]</p>
-    </section>
-
+     /section>
     <footer>
-        <p>© 2024 Daedalus Solutions | <a href="index.html">Back to Home</a></p>
+        <p>© 2024 Daedalus Solutions | <a href="contact.html">Contact Us</a></p>
     </footer>
 </body>
 </html>
